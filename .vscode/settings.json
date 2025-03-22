@@ -1,5 +1,4 @@
 {
-    "ros.distro": "jazzy",
     "files.associations": {
         "cctype": "cpp",
         "clocale": "cpp",
@@ -71,5 +70,6 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp"
-    }
+    },
+    "ros.distro": "jazzy"
 }
