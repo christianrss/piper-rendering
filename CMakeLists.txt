@@ -7,6 +7,6 @@ find_package(OpenGL REQUIRED)
 
 include_directories(${OPENGL_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS})
 
-add_executable(PiperRendering main.cpp screen.cpp)
+add_executable(PiperRendering main.cpp screen.cpp input.cpp)
 
 target_link_libraries(PiperRendering ${OPENGL_LIBRARIES} ${SDL2_LIBRARIES})
