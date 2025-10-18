@@ -15,7 +15,12 @@ target_include_directories(glad PUBLIC
 
 include_directories(${OPENGL_INCLUDE_DIRS} ${SDL2_INCLUDE_DIRS})
 
-add_executable(${PROJECT_NAME} main.cpp screen.cpp input.cpp)
+add_executable(${PROJECT_NAME}
+    main.cpp
+    screen.cpp
+    input.cpp
+    shader.cpp
+)
 
 target_link_libraries(${PROJECT_NAME}
     glad

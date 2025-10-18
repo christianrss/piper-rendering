@@ -9,86 +9,86 @@ Input* Input::Instance()
 
 Input::Input()
 {
-    m_keyUp = 0;
-    m_keyDown = 0;
+    this->m_keyUp = 0;
+    this->m_keyDown = 0;
 
-    m_isXClicked = false;
-    m_isKeyPressed = false;
+    this->m_isXClicked = false;
+    this->m_isKeyPressed = false;
 
-    m_isLeftButtonClicked = false;
-    m_isRightButtonClicked = false;
-    m_isMiddleButtonClicked = false;
+    this->m_isLeftButtonClicked = false;
+    this->m_isRightButtonClicked = false;
+    this->m_isMiddleButtonClicked = false;
 
-    m_mouseMotionX = 0;
-    m_mouseMotionY = 0;
+    this->m_mouseMotionX = 0;
+    this->m_mouseMotionY = 0;
 
-    m_mousePositionX = 0;
-    m_mousePositionY = 0;
+    this->m_mousePositionX = 0;
+    this->m_mousePositionY = 0;
 }
 
 bool Input::IsXClicked()
 {
-    return m_isXClicked;
+    return this->m_isXClicked;
 }
 
 bool Input::IsKeyPressed()
 {
-    return m_isKeyPressed;
+    return this->m_isKeyPressed;
 }
 
 char Input::GetKeyUp()
 {
-    return m_keyUp;
+    return this->m_keyUp;
 }
 
 char Input::GetKeyDown()
 {
-    return m_keyDown;
+    return this->m_keyDown;
 }
 
 bool Input::IsLeftButtonClicked()
 {
-    return m_isLeftButtonClicked;
+    return this->m_isLeftButtonClicked;
 }
 
 bool Input::IsRightButtonClicked()
 {
-    return m_isRightButtonClicked;
+    return this->m_isRightButtonClicked;
 }
 
 bool Input::IsMiddleButtonClicked()
 {
-    return m_isMiddleButtonClicked;
+    return this->m_isMiddleButtonClicked;
 }
 
 int Input::GetMousePositionX()
 {
-    return m_mousePositionX;
+    return this->m_mousePositionX;
 }
 
 int Input::GetMousePositionY()
 {
-    return m_mousePositionY;
+    return this->m_mousePositionY;
 }
 
 int Input::GetMouseMotionX()
 {
-    return m_mouseMotionX;
+    return this->m_mouseMotionX;
 }
 
 int Input::GetMouseMotionY()
 {
-    return m_mouseMotionY;
+    return this->m_mouseMotionY;
 }
 
 void Input::Update()
 {
     SDL_Event events;
 
-    m_mouseMotionX = 0;
-    m_mouseMotionY = 0;
-    m_mousePositionX = 0;
-    m_mousePositionY = 0;
+    this->m_mouseMotionX = 0;
+    this->m_mouseMotionY = 0;
+    this->m_mousePositionX = 0;
+    this->m_mousePositionY = 0;
 
     while (SDL_PollEvent(&events))
     {
@@ -96,21 +96,21 @@ void Input::Update()
         {
             case SDL_QUIT:
             {
-                m_isXClicked = true;
+                this->m_isXClicked = true;
                 break;
             }
 
             case SDL_KEYDOWN:
             {
-                m_isKeyPressed = true;
-                m_keyDown = events.key.keysym.sym;
+                this->m_isKeyPressed = true;
+                this->m_keyDown = events.key.keysym.sym;
                 break;
             }
 
             case SDL_KEYUP:
             {
-                m_isKeyPressed = false;
-                m_keyUp = events.key.keysym.sym;
+                this->m_isKeyPressed = false;
+                this->m_keyUp = events.key.keysym.sym;
                 break;
             }
 
@@ -120,19 +120,19 @@ void Input::Update()
                 {
                     case SDL_BUTTON_LEFT:
                     {
-                        m_isLeftButtonClicked = true;
+                        this->m_isLeftButtonClicked = true;
                         break;
                     }
 
                     case SDL_BUTTON_RIGHT:
                     {
-                        m_isRightButtonClicked = true;
+                        this->m_isRightButtonClicked = true;
                         break;
                     }
 
                     case SDL_BUTTON_MIDDLE:
                     {
-                        m_isMiddleButtonClicked = true;
+                        this->m_isMiddleButtonClicked = true;
                         break;
                     }
                 }
@@ -145,19 +145,19 @@ void Input::Update()
             {
                 case SDL_BUTTON_LEFT:
                 {
-                    m_isLeftButtonClicked = false;
+                    this->m_isLeftButtonClicked = false;
                     break;
                 }
 
                 case SDL_BUTTON_RIGHT:
                 {
-                    m_isRightButtonClicked = false;
+                    this->m_isRightButtonClicked = false;
                     break;
                 }
 
                 case SDL_BUTTON_MIDDLE:
                 {
-                    m_isMiddleButtonClicked = false;
+                    this->m_isMiddleButtonClicked = false;
                     break;
                 }
 
@@ -168,11 +168,11 @@ void Input::Update()
             case SDL_MOUSEMOTION:
             {
 
-                m_mouseMotionX = events.motion.xrel;
-                m_mouseMotionY = events.motion.yrel;
+                this->m_mouseMotionX = events.motion.xrel;
+                this->m_mouseMotionY = events.motion.yrel;
 
-                m_mousePositionX = events.motion.x;
-                m_mousePositionY = events.motion.y;
+                this->m_mousePositionX = events.motion.x;
+                this->m_mousePositionY = events.motion.y;
 
                 break;
 

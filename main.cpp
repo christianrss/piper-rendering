@@ -2,12 +2,40 @@
 #include "screen.h"
 #include "input.h"
 #include "glad/glad.h"
+#include "shader.h"
 
 bool isAppRunning = true;
 
 int main(int argc, char* argv[])
 {
     Screen::Instance()->Initialize();
+
+    if (!Shader::Instance()->CreateProgram())
+    {
+        return 0;
+    }
+
+    if (!Shader::Instance()->CreateShaders())
+    {
+        return 0;
+    }
+
+    if(!Shader::Instance()->CompileShaders("Shaders/Main.vert", Shader::ShaderType::VERTEX_SHADER))
+    {
+        // TODO
+    }
+
+    if (!Shader::Instance()->CompileShaders("Shaders/Main.frag", Shader::ShaderType::FRAGMENT_SHADER))
+    {
+        // TODO
+    }
+
+    Shader::Instance()->AttachShaders();
+    
+    if (!Shader::Instance()->LinkProgram())
+    {
+        // TODO
+    }
 
     float xPos = 0.0f;
     float yPos = 0.0f;
@@ -65,6 +93,10 @@ int main(int argc, char* argv[])
 
         Screen::Instance()->Present();
     }
+
+    Shader::Instance()->DetachShaders();
+    Shader::Instance()->DestroyShaders();
+    Shader::Instance()->DestroyProgram();
 
     Screen::Instance()->Shutdown();
 
