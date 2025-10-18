@@ -1,6 +1,6 @@
-#include <GL/gl.h>
 #include <iostream>
 #include "screen.h"
+#include "glad/glad.h"
 
 Screen* Screen::Instance()
 {
@@ -54,6 +54,11 @@ bool Screen::Initialize()
     {
         std::cout << "Error creating OpenGL context" << std::endl;
         return false;
+    }
+
+    if (!gladLoadGL())
+    {
+        std::cout << "Error loading extensions!" << std::endl;
     }
 
     return true;

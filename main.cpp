@@ -1,7 +1,7 @@
 #include <iostream>
-#include <GL/gl.h>
 #include "screen.h"
 #include "input.h"
+#include "glad/glad.h"
 
 bool isAppRunning = true;
 
