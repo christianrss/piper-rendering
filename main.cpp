@@ -40,6 +40,12 @@ int main(int argc, char* argv[])
     float xPos = 0.0f;
     float yPos = 0.0f;
 
+    if (Shader::Instance()->SendUniformData("time", 20))
+    {
+        // warning
+    }
+    
+    // ==============================================================
     while (isAppRunning)
     {
         Screen::Instance()->ClearScreen();
