@@ -16,6 +16,8 @@ public:
 
 public:
 
+    GLuint GetShaderProgramID();
+    
     bool CreateProgram();
     bool CreateShaders();
 

@@ -233,3 +233,8 @@ bool Shader::SendUniformData(const std::string &uniformName, GLfloat x, GLfloat 
     glUniform4f(ID, x, y, z, w);
     return true;
 }
+
+GLuint Shader::GetShaderProgramID()
+{
+    return this->m_shaderProgramID;
+}
