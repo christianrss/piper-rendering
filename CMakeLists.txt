@@ -20,6 +20,8 @@ add_executable(${PROJECT_NAME}
     screen.cpp
     input.cpp
     shader.cpp
+    quad.cpp
+    buffer.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}
