@@ -3,6 +3,7 @@
 #include "input.h"
 #include "glad/glad.h"
 #include "shader.h"
+#include "quad.h"
 
 bool isAppRunning = true;
 
@@ -41,8 +42,7 @@ int main(int argc, char* argv[])
     float yPos = 0.0f;
 
     //==============================================================
-
-
+    Quad quad;
     //==============================================================
     while (isAppRunning)
     {
@@ -78,6 +78,8 @@ int main(int argc, char* argv[])
             }
         
         }
+
+        quad.Render();
 
         Screen::Instance()->Present();
     }

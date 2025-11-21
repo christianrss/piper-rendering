@@ -21,6 +21,7 @@ add_executable(${PROJECT_NAME}
     input.cpp
     shader.cpp
     quad.cpp
+    buffer.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}

@@ -2,6 +2,7 @@
 #define QUAD_H
 
 #include "glad/glad.h"
+#include "buffer.h"
 
 class Quad
 {
@@ -13,13 +14,7 @@ public:
     void Render();
 
 private:
-
-    GLuint m_VAO;
-    GLint m_colorID;
-    GLint m_vertexID;
-    GLuint m_colorVBO;
-    GLuint m_vertexVBO;
-
+    Buffer m_buffer;
 };
 
 #endif
